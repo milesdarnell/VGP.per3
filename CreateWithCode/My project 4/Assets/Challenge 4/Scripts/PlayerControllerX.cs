@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,6 @@ public class PlayerControllerX : MonoBehaviour
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
     
-    private float turboBoost = 10;
     public ParticleSystem turboSmoke;
 
     void Start()
@@ -26,6 +25,7 @@ public class PlayerControllerX : MonoBehaviour
 
     void Update()
     {
+
         // Add force to player in direction of the focal point (and camera)
         float verticalInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime); 
@@ -35,7 +35,7 @@ public class PlayerControllerX : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            turboSmoke.Play()
         }
 
     }
