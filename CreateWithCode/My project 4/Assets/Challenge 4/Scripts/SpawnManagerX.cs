@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,7 @@ public class SpawnManagerX : MonoBehaviour
     public int enemyCount;
     public int waveCount = 1;
 
+    public float enemySpeed = 50;
 
     public GameObject player; 
 
@@ -55,6 +56,7 @@ public class SpawnManagerX : MonoBehaviour
         }
 
         waveCount++;
+        enemyCount += 50;
         ResetPlayerPosition(); // put player back at start
 
     }
