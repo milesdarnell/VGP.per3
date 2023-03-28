@@ -1981,7 +1981,7 @@ MonoBehaviour:
   gameOverText: {fileID: 968496451}
   isGameActive: 0
   restartButton: {fileID: 897559850}
-  titleScreen: {fileID: 0}
+  titleScreen: {fileID: 1335293783}
 --- !u!4 &1737083509
 Transform:
   m_ObjectHideFlags: 0
