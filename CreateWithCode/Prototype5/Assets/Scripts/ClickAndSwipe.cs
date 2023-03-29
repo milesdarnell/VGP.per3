@@ -1,17 +1,20 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class ClickAndSwipe : MonoBehaviour
 {
     // Start is called before the first frame update
     void Awake()
     {
-        cam = Camera.main
-        trail = GetComponent
+        cam = Camera.main;
+        trail = GetComponent;
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         if(gameManager.isGameActive)
@@ -43,3 +46,4 @@ public class ClickAndSwipe : MonoBehaviour
         transform.position
     }
 }
+*/
