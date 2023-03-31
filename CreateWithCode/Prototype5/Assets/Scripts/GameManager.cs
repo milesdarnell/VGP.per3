@@ -1,4 +1,4 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private float spawnRate = 1.0f;
     public Button restartButton;
     public GameObject titleScreen;
+    private int lives;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         score = 0;
-
+        UpdateLives(10);
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
 
@@ -38,10 +39,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(input.GetKeyDown(KeyCode.P))
-        {
-            ChangePaused();
-        }
+
     }
 
     IEnumerator SpawnTarget()
@@ -57,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = "Score " + score;
+        scoreText.text = "Score: " + score;
     }
 
     public void RestartGame()
@@ -70,5 +68,14 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
         restartButton.gameObject.SetActive(true);
+    }
+
+    public void UpdateLives(int livesToChange)
+    {
+        lives += livesToChange;
+        if(lives <= 0)
+        {
+            GameOver();
+        }
     }
 }
