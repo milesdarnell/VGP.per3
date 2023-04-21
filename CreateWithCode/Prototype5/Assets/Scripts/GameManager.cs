@@ -1,4 +1,4 @@
-  using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void UpdateLives(int livesToChange)
     {
         lives += livesToChange;
+        //LivesText.text = "Lives: " + lives;
         if(lives <= 0)
         {
             GameOver();
